@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sort</title>
+</head>
+<body>
+    <h1 id="js-title" class="title">SORT</h1>
+    <canvas id="js-canvas" class="canvas"></canvas>
+    <select id="js-sortBox" class="select">
+        <option value="">Sort Type</option>
+        <option value="bubble">Bubble Sort</option>
+        <option value="select">Selection Sort</option>
+        <option value="insert">Insertion Sort</option>
+        <option value="shell">Shell Sort</option>
+        <option value="quick">Quick Sort</option>
+        <option value="merge">Merge Sort</option>
+        <option value="heap">Heap Sort</option>
+        <option value="counting">Counting Sort</option>
+    </select>
+    <div class="controls__btns">
+        <button>Delay</button>
+        <input type="range" id="js-range" min="1" max="100" value="10" step="1">
+        <button id="js-shuffle">Shuffle</button>
+        <button id="js-initialize">Initialize</button>
+    </div>
+    <script src="graph.js"></script>
+</body>
+</html>
