@@ -147,9 +147,35 @@ async function insertionSort(arr) {
             drawGraph(i, "grey");
         }
         arr[j + 1] = key;
-        drawGraph(j + 1, INITIAL_COLOR);
+        drawGraph(j + 1, "grey");
     }
+    drawGraphAll(arr, INITIAL_COLOR);
+}
+
+async function shellSort(arr) {
+    drawGraphAll(arr, "grey");
     console.log(arr);
+    let gap, list, i, key, j;
+
+    for (gap = Math.floor(arr.length / 3 + 1); gap >= 1; gap = Math.floor(gap / 3 + 1)) {
+        for (list = 0; list < gap; list++) {
+            for (i = list + gap; i < arr.length; i += gap) {
+                key = arr[i];
+                drawGraph(i, "red");
+                j = i - gap;
+                for (; j >= 0 && arr[j] > key; j -= gap) {
+                    arr[j + gap] = arr[j];
+                    drawGraph(j + gap, "yellow");
+                    await timer(delay);
+                }
+                arr[j + gap] = key;
+                drawGraphAll(arr, "grey");
+                drawGraph(j + gap, "red");
+            }
+        }
+        if (gap <= 1) break;
+    }
+
     drawGraphAll(arr, INITIAL_COLOR);
 }
 
