@@ -7,7 +7,7 @@
     <title>SortJS</title>
 </head>
 <body>
-    <h1 id="js-title" class="title">SORT</h1>
+    <h1 id="js-title" class="title">Sort.js</h1>
     <canvas id="js-canvas" class="canvas"></canvas>
     <select id="js-sortBox" class="select">
         <option value="">Sort Type</option>
@@ -20,9 +20,10 @@
         <option value="heap">Heap Sort</option>
         <option value="counting">Counting Sort</option>
     </select>
+    <div class="delay">
+        Delay<input type="range" id="js-range" min="1" max="200" value="10" step="1">
+    </div>
     <div class="controls__btns">
-        <button>Delay</button>
-        <input type="range" id="js-range" min="1" max="100" value="10" step="1">
         <button id="js-shuffle">Shuffle</button>
         <button id="js-initialize">Initialize</button>
     </div>

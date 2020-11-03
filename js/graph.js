@@ -34,7 +34,6 @@ function drawGraphAll(arr, color) {
     }
 }
 
-
 function drawGraph(i, color) {
     ctx.fillStyle = "white";
     ctx.fillRect(i * 10, canvas.height, 8, -canvas.height);
@@ -75,6 +74,8 @@ function handleDelayChange(event) {
 }
 
 function sort(sortType) {
+    drawGraphAll(array, "grey");
+
     if (sortType === "bubble") {
         bubbleSort(array);
     }
@@ -93,7 +94,6 @@ function sort(sortType) {
 }
 
 async function bubbleSort(arr) {
-    drawGraphAll(arr, "grey");
     for (let i = 0; i < arr.length - 1; i++) {
         let j = 0;
         for (; j < arr.length - i - 1; j++) {
@@ -108,12 +108,10 @@ async function bubbleSort(arr) {
         }
         drawGraph(j, INITIAL_COLOR);
     }
-    drawGraphAll(arr, INITIAL_COLOR);
+    drawGraphAll(array, INITIAL_COLOR);
 }
 
 async function selectionSort(arr) {
-    drawGraphAll(arr, "grey");
-
     for (let i = 0; i < arr.length - 1; i++) {
         let minIndex = i;
         for(let j = i + 1; j < arr.length; j++) {
@@ -129,12 +127,10 @@ async function selectionSort(arr) {
         [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
         drawGraph(i, INITIAL_COLOR);
     }
-    drawGraphAll(arr, INITIAL_COLOR);
+    drawGraphAll(array, INITIAL_COLOR);
 }
 
 async function insertionSort(arr) {
-    drawGraphAll(arr, "grey");
-
     for (let i = 1; i < arr.length; i++) {
         let key = arr[i];
         let j = i - 1;
@@ -149,12 +145,10 @@ async function insertionSort(arr) {
         arr[j + 1] = key;
         drawGraph(j + 1, "grey");
     }
-    drawGraphAll(arr, INITIAL_COLOR);
+    drawGraphAll(array, INITIAL_COLOR);
 }
 
 async function shellSort(arr) {
-    drawGraphAll(arr, "grey");
-    console.log(arr);
     let gap, list, i, key, j;
 
     for (gap = Math.floor(arr.length / 3 + 1); gap >= 1; gap = Math.floor(gap / 3 + 1)) {
@@ -175,8 +169,7 @@ async function shellSort(arr) {
         }
         if (gap <= 1) break;
     }
-
-    drawGraphAll(arr, INITIAL_COLOR);
+    drawGraphAll(array, INITIAL_COLOR);
 }
 
 function init() {

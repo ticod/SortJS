@@ -9,34 +9,45 @@ body {
 }
 
 .title {
-    margin: 15px;
-    padding: 30px;
-    font-size: 2.5em;
+    margin: 1em;
+    font-size: 1.8em;
     background-color: white;
-    padding: 5px 0px;
-    width: 4em;
+    padding: 0.3em 1.2em 0.3em 1.2em;
     text-align: center;
-    border-radius: 5px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.2);
     color: rgba(0, 0, 0, 0.8);
-    text-transform: uppercase;
     font-weight: 700;
 }
 
 .canvas {
-    width: 1000px;
-    height: 700px;
+    width: 50em;
+    height: 30em;
     background-color: white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .select {
-    margin: 30px;
+    margin: 16px;
     font-size: 1.4em;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.8);
     font-weight: 700;
+}
+
+.delay {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.delay input {
+    margin-left: 0.6em;
+    width: 12em;
+}
+
+.controls__btns {
+    margin: 1em;
 }
 
 .controls__btns button {
@@ -44,15 +55,15 @@ body {
     cursor: pointer;
     background-color: white;
     padding: 5px 0px;
-    width: 80px;
+    width: 100px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 0.2em;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.2);
     color: rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 0.8em;
 }
 
 .controls__btns button:active {
