@@ -172,6 +172,44 @@ async function shellSort(arr) {
     drawGraphAll(array, INITIAL_COLOR);
 }
 
+async function quickSort(arr) {
+    quickSort1(arr, 0, arr.length - 1);
+    drawGraphAll(array, INITIAL_COLOR);
+}
+
+async function quickSort1(arr, left, right) {
+    if (left < right) {
+        let i = left, j = right;
+        let pivot = arr[left];
+        drawGraph(left, "red");
+        
+        while (i < j) {
+            console.log("hihi")
+            while (arr[j] > pivot) {
+                j--;
+            }
+            while (arr[i] <= pivot && i < j) {
+                i++;
+            }
+            drawGraph(i, "yellow");
+            drawGraph(j, "yellow");
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            await timer(delay);
+            drawGraph(i, "green");
+            drawGraph(j, "green");
+        }
+        arr[left] = arr[i];
+        arr[i] = pivot;
+        drawGraph(i, "black");
+        drawGraph(left, "black");
+
+        quickSort1(arr, left, i - 1);
+        quickSort1(arr, i + 1, right);
+    }
+}
+
 function init() {
     arrayInit();
 
