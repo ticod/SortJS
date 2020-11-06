@@ -1,0 +1,1 @@
+export let graph = new Array(100);
